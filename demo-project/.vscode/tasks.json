@@ -1,0 +1,15 @@
+{
+  // Opens GhostTrace when this folder is opened. Replace the URL with your GitHub Pages link
+  // (or http://127.0.0.1:5500/ if you use Live Server). Default command is for Windows.
+  "version": "2.0.0",
+  "tasks": [{
+    "label": "Launch GhostTrace",
+    "type": "shell",
+    "command": "start http://127.0.0.1:5500/",
+    "osx": { "command": "open http://127.0.0.1:5500/" },
+    "linux": { "command": "xdg-open http://127.0.0.1:5500/" },
+    "runOptions": { "runOn": "folderOpen" },
+    "presentation": { "reveal": "never" },
+    "problemMatcher": []
+  }]
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GhostTrace</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header>
+  <h1>👻 GhostTrace</h1>
+  <select id="projectSelect" aria-label="Project"></select>
+  <button id="newProjectBtn">New project</button>
+</header>
+<div id="banner" hidden>⏰ Still working? Park your progress. <button id="bannerClose" aria-label="Close">×</button></div>
+<nav>
+  <button data-tab="kickoff" class="active">Kickoff</button><button data-tab="park">Park it</button>
+  <button data-tab="teleport">Teleport</button><button data-tab="timeline">Timeline</button>
+</nav>
+<main>
+  <section id="tab-kickoff">
+    <div class="card"><h2>What are you building?</h2>
+      <textarea id="ideaInput" rows="5" placeholder="e.g. A Flask app to manage stock for a small shop"></textarea>
+      <button id="startBtn" class="primary">Start project</button></div>
+    <div id="kickoffOut"></div>
+  </section>
+  <section id="tab-park" hidden>
+    <div class="card"><h2>Project folder</h2>
+      <button id="pickBtn">Choose project folder</button><div id="tree" class="tree"></div></div>
+    <div class="card"><h2>Messy notes?</h2>
+      <textarea id="aiNotes" rows="3" placeholder="Paste notes or an error message, Gemma fills the fields"></textarea>
+      <button id="autofillBtn">AI Autofill</button></div>
+    <form id="parkForm" class="card"><h2>Park it</h2>
+      <label>What were you doing?<input id="doing"></label>
+      <label>What is broken? (paste the error)<input id="problem"></label>
+      <label>What did you try?<input id="tried" placeholder="Type and press Enter"></label>
+      <div id="chips" class="chips"></div>
+      <label>Next step<input id="next"></label>
+      <button type="submit" class="primary">Park it</button></form>
+    <div id="parkOut"></div>
+  </section>
+  <section id="tab-teleport" hidden>
+    <button id="teleportBtn" class="teleport">Teleport Me Back</button><div id="teleportCard"></div>
+  </section>
+  <section id="tab-timeline" hidden><div id="timeline"></div></section>
+</main>
+<footer>
+  <button id="exportBtn">Export JSON</button>
+  <label class="btn">Import JSON<input type="file" id="importFile" accept=".json" hidden></label>
+  <p>Powered by Gemma 4 (gemma-4-26b-a4b-it) via the Gemini API · Your data stays in your browser</p>
+</footer>
+<script src="js/storage.js"></script><script src="js/folder.js"></script><script src="js/ai.js"></script>
+<script src="js/ui.js"></script><script src="js/app.js"></script><script src="js/fx.js"></script>
+</body></html>
